@@ -23,13 +23,13 @@ enum class asset_type {
 class database
 {
     public:
-        database(const char *conninfo);
+        database(const std::string &conninfo);
         ~database();
 
         database(const database&) = delete;
         database &operator=(const database&) = delete;
 
-        void exec(const char *query);
+        void exec(const std::string &query);
         void print_to_terminal();
 
         std::vector<std::string> symbols(const asset_type &asset);

@@ -1,9 +1,9 @@
 #include "database.hpp"
 
-database::database(const char *conninfo)
+database::database(const std::string &conninfo)
 {
     // connect to database 
-    m_conn = PQconnectdb(conninfo);
+    m_conn = PQconnectdb(conninfo.c_str());
 }
 
 database::~database()
@@ -12,9 +12,9 @@ database::~database()
     PQfinish(m_conn);
 }
 
-void database::exec(const char *query)
+void database::exec(const std::string &query)
 {
-    m_res = PQexec(m_conn, query);
+    m_res = PQexec(m_conn, query.c_str());
 }
 
 void database::print_to_terminal()
