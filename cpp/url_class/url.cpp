@@ -18,5 +18,5 @@ void Url::set(CURLUPart part, const char *content)
 const std::string Url::get(CURLUPart part)
 {
     m_curlcode = curl_url_get(m_url, part, &m_data, 0);
-    return temp_str = m_data;
+    return m_str = m_data;
 }

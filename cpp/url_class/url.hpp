@@ -17,6 +17,6 @@ class Url {
         CURLU *m_url;
         CURLUcode m_curlcode;
         
-        std::string temp_str;
+        std::string m_str;
         char *m_data;
 };
