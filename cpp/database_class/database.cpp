@@ -1,23 +1,23 @@
 #include "database.hpp"
 
-database::database(const std::string &conninfo)
+Database::Database(const std::string &conninfo)
 {
     // connect to database 
     m_conn = PQconnectdb(conninfo.c_str());
 }
 
-database::~database()
+Database::~Database()
 {
     PQclear(m_res);
     PQfinish(m_conn);
 }
 
-void database::exec(const std::string &query)
+void Database::exec(const std::string &query)
 {
     m_res = PQexec(m_conn, query.c_str());
 }
 
-void database::print_to_terminal()
+void Database::print_to_terminal()
 {
     int nFields;
 
@@ -40,7 +40,7 @@ void database::print_to_terminal()
     }
 }
 
-std::vector<std::string> database::symbols(const asset_type &asset)
+std::vector<std::string> Database::symbols(const asset_type &asset)
 {
     std::vector<std::string> temp_v;
     int n_fields;

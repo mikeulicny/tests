@@ -20,14 +20,14 @@ enum class asset_type {
     UNKNOWN
 };
 
-class database
+class Database
 {
     public:
-        database(const std::string &conninfo);
-        ~database();
+        Database(const std::string &conninfo);
+        ~Database();
 
-        database(const database&) = delete;
-        database &operator=(const database&) = delete;
+        Database(const Database&) = delete;
+        Database &operator=(const Database&) = delete;
 
         void exec(const std::string &query);
         void print_to_terminal();

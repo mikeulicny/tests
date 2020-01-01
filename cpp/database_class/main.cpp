@@ -7,7 +7,7 @@
 int main()
 {
     // connect to database
-    database db_test("dbname = stockmarket_database");
+    Database db_test("dbname = stockmarket_database");
    
     // pass in SQL syntax
     std::cout << "TEST OF SQL SYNTAX\n";
